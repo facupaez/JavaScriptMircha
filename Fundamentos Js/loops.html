@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos o bucles repetitivos</title>
+</head>
+
+<body>
+    <h1>CICLOS O BUCLES REPETITIVOS</h1>
+    <h2>Bucles: While (se ejecuta el codigo siempre y cuando se cumpla la condicion)</h2>
+    <script>
+        let contador = 0;
+
+        while (contador < 10) {
+            console.log("while " + contador);
+            //por cada vuelta la variable aumenta en 1
+            contador++;
+        }
+    </script>
+
+    <h2>Bucles: Do While (se ejecuta el codigo y despues ve si la condicion se cumple)</h2>
+    <script>
+        let contador1 = 0;
+
+        do {
+            console.log("do while " + contador1);
+            //por cada vuelta la variable aumenta en 1
+            contador1++;
+        } while (contador1 < 10)
+    </script>
+
+    <h2>Bucles: For</h2>
+    <script>
+        /*for (inicializacion de variable; condicion;incremento o decremento){
+            sentencias que ejecuta el for
+        }*/
+
+        for (let i = 0; i < 10; i++) {
+            console.log("for " + i);
+        }
+
+        let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+        for (let i = 0; i < numeros.length; i++) {
+            console.log(numeros[i]);
+        }
+
+    </script>
+
+    <h2>Bucles: For In</h2>
+    <script>
+        //permite iterar las propiedas de un objeto
+
+        const facu = {
+            nombre: "facu",
+            apellido: "paez",
+            edad: 27
+        }
+
+        for (const propertie in facu) {
+            console.log(`Key: ${propertie}, Value: ${facu[propertie]}`);
+        }
+    </script>
+
+    <h2>Bucles: For Of</h2>
+    <script>
+        //permite iterar todos los elementos de un arreglo o cadena de texto
+
+        for (const elementos of numeros) {
+            console.log(elementos);
+        }
+
+        let cadena = "Hola Mundo!"
+
+        for (const caracter of cadena) {
+            console.log(caracter);
+        }
+    </script>
+</body>
+
+</html>

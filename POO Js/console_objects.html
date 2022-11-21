@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Console</title>
+</head>
+
+<body>
+    <h1>Objeto Console</h1>
+    <script>
+        console.clear();
+
+        console.log("Log es un registro de lo que ha pasado en nuestra app");
+        console.error("Esto es un error");
+        console.warn("Esto es un aviso");
+        console.info("Esto es un mensaje informativo");
+
+        let nombre = "Jon",
+            apellido = "Asd",
+            edad = 35;
+
+        console.log(nombre);
+        console.log(apellido);
+        console.log(edad);
+        console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años`);
+        console.clear();
+
+        console.log(window);
+        console.log(document);
+        console.clear();
+
+        //grupos en consola
+        console.group("Probando group");
+        console.log("Prueba 1");
+        console.log("Prueba 2");
+        console.log("Prueba 3");
+        console.groupEnd();
+
+        console.groupCollapsed("Probando groupCollapsed");
+        console.log("Prueba 1");
+        console.log("Prueba 2");
+        console.log("Prueba 3");
+        console.groupEnd();
+        console.clear();
+
+        //tablas en consola con objeto creado
+        console.log(console)
+        console.table(Object.entries(console).sort());
+        console.clear();
+
+        //tablas en consola con arrays
+        const numeros = [1, 2, 3, 4, 5],
+            vocales = ["a", "e", "i", "o", "u"];
+
+        console.table(numeros);
+        console.table(vocales);
+
+        //tablas en consola con objetos
+        const perro = {
+            nombre: "boy",
+            raza: "caniche",
+            color: "marron"
+        }
+
+        console.table(perro);
+
+        //conocer el tiempo de respuesta
+        console.time("Cuanto tiempo tarda mi codigo");
+        const arreglo = Array(1000000);
+
+        for (let i = 0; i < arreglo.length; i++) {
+            arreglo[i] = i;
+        }
+
+        console.timeEnd("Cuanto tiempo tarda mi codigo");
+
+        //cuantas veces se ejecuta cierto fragmento
+        for (let i = 0; i <= 10; i++) {
+            console.count("Codigo for");
+            console.log(i);
+        }
+
+        //realizar prequeñas pruebas
+        let x = 4,
+            y = 2,
+            pruebaXY = "Se espera que X siempre sea menor que Y";
+
+        console.assert(x < y, { x, y, pruebaXY });
+    </script>
+</body>
+
+</html>

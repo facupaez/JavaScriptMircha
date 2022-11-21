@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones de Flechas</title>
+</head>
+
+<body>
+    <h1>Funciones de Flechas</h1>
+    <h2>funcion expresada: a una variable le asignamos el valor de una funcion anonima</h2>
+    <script>
+        const saludo = function () {
+            console.log("Hola!");
+        }
+        saludo();
+    </script>
+
+    <h2>Arrow function: eliminamos "function" y "{}"</h2>
+    <script>
+        const saludar = () => console.log("Hola con arrow function!");
+        saludar();
+    </script>
+
+    <h2>Arrow function: con 1 param, eliminamos "()"</h2>
+    <script>
+        const saludar1 = nombre => console.log(`Hola ${nombre}`);
+        saludar1("Irrrrma");
+    </script>
+
+    <h2>Ejemplo con return</h2>
+    <script>
+        const sumar = function (a, b) {
+            return a + b;
+        }
+        console.log(sumar(1, 2));
+
+        const sumarArrowFunction = (a, b) => a + b;
+        console.log(sumarArrowFunction(4, 5));
+    </script>
+
+    <h2>Ejemplo con arrays</h2>
+    <script>
+        const numeros = [1, 2, 3, 4, 5];
+
+        numeros.forEach(function (el, index) {
+            console.log(`El elemento ${el} esta en la posicion ${index}`)
+        });
+
+        const numerosArrowFunction = [1, 2, 3, 4, 5];
+
+        numerosArrowFunction.forEach((el, index) => {
+            console.log(`El elemento ${el} esta en la posicion ${index}`)
+        });
+    </script>
+
+    <h2>Uso del "this" en nuestra ventana de window</h2>
+    <script>
+        function Perro() {
+            console.log(this);
+        }
+        Perro();
+    </script>
+
+
+    <h2>Uso del "this" en un objeto</h2>
+    <script>
+        //dentro de un objeto literal no se crean metodos con arrow functions
+        //los metodos en un objeto se crean con la siguiente expresion
+        const perro = {
+            nombre: "capitan",
+            ladrar() {
+                console.log(this);
+            }
+        }
+        perro.ladrar();
+    </script>
+</body>
+
+</html>

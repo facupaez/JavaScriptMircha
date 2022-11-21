@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+</head>
+
+<body>
+    <h1>List Map</h1>
+    <script>
+
+        let map = new Map();
+
+        //agregar valores
+        map.set("nombre", "facu");
+        map.set("apellido", "paez");
+        map.set("edad", 20);
+
+        console.log(map);
+        console.log(map.size);
+        console.log(map.has("correo"));
+        console.log(map.has("nombre"));
+        console.log(map.get("nombre"));
+
+        //modificar valor
+        map.set("nombre", "facu1");
+        console.log(map.get("nombre"));
+
+        //eliminar valor
+        map.delete("apellido");
+        console.log(map);
+
+        //recorrer mapa con for
+        for (let [key, value] of map) {
+            console.log(`Llave: ${key}, valor: ${value}`);
+        }
+
+        //agregar valores en map
+        const map2 = new Map([
+            ["nombre", "facu"],
+            ["apellido", "paez"],
+            ["edad", 7]
+        ]);
+
+        console.log(map2);
+
+        const keysMap2 = [...map2.keys()];
+        const valuesMap2 = [...map2.values()];
+
+        console.log(keysMap2);
+        console.log(valuesMap2);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objectos</title>
+</head>
+
+<body>
+    <h1>OBJECTOS</h1>
+
+    <h2>Objetos basicos</h2>
+    <script>
+        const b = {};
+        console.log(b);
+
+        //dentro de un objeto a las variables se le llaman atributos/propiedades
+        //y a las funciones se les llama metodos
+        const facu = {
+            nombre: "Facu",
+            apellido: "Paez",
+            edad: 25,
+            pasatiempos: [
+                "correr",
+                "programar",
+                "gim"],
+            soltero: false,
+            contacto: {
+                email: "facu.pz10@gmail.com",
+                telefono: 498588
+            },
+            saludar: function () {
+                console.log(`Hola`);
+            },
+            decirMiNombre: function () {
+                console.log(`Hola me llamo: ${this.nombre} ${this.apellido} y tengo ${this.edad} años`)
+            }
+        }
+
+        console.log(facu);
+        //acceder a los atributos
+        console.log(facu["nombre"]);
+        console.log(facu.nombre);
+        facu.saludar();
+        console.log(facu.pasatiempos);
+        console.log(facu.pasatiempos[1]);
+        console.log(facu.contacto);
+        console.log(facu.contacto.email);
+        facu.decirMiNombre();
+
+        //metodo que devuelve llaves de un objeto
+        console.log(Object.keys(facu));
+        //metodo que devuelve valores de un objeto
+        console.log(Object.values(facu));
+        //metodo que valida si el objeto tiene una propiedad
+        console.log(facu.hasOwnProperty("nombre"));
+        console.log(facu.hasOwnProperty("nacimiento")); 
+    </script>
+
+    <h2>Objetos literales</h2>
+    <script>
+        let nombre = "capitan", edad = 7;
+        const perro = {
+            nombre: nombre,
+            edad: edad,
+            ladrar: function () {
+                console.log("Guau, guau");
+            }
+        }
+
+        console.log(perro);
+        perro.ladrar();
+
+        const dog = {
+            nombre,
+            edad,
+            raza: "callejero",
+            ladrar() {
+                console.log("Guau, guau, guau, guau");
+            }
+        }
+
+        console.log(dog);
+        dog.ladrar();
+    </script>
+</body>
+
+</html>

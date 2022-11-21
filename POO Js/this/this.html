@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de This</title>
+</head>
+
+<body>
+    <h1>Uso de This</h1>
+    <script>
+
+        console.log(this);
+        console.log(window);
+        console.log(this === window);
+
+        this.nombre = "Contexto global";
+        console.log(this.nombre);
+
+        function imprimir() {
+            console.log(this.nombre);
+        }
+
+        imprimir();
+
+        const obj = {
+            nombre: "Contexto obj",
+            imprimir: function () {
+                console.log(this.nombre);
+            }
+        }
+
+        obj.imprimir();
+
+        const obj2 = {
+            nombre: "Contexto obj 2",
+            imprimir
+        }
+
+        obj2.imprimir();
+
+        const obj3 = {
+            nombre: "Contexto obj 3",
+            imprimir: () => {
+                console.log(this.nombre);
+            }
+        }
+
+        obj3.imprimir();
+
+        function Persona(nombre) {
+            this.nombre = nombre;
+            // return console.log(this.nombre);
+            /*  return function () {
+                 console.log(this.nombre); crea un nuevo scope por eso no identifica el this
+             } */
+            return () => console.log(this.nombre);
+        }
+
+        let jon = new Persona("Jon");
+        jon();
+
+    </script>
+</body>
+
+</html>

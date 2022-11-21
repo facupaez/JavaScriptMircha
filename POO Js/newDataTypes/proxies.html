@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxies</title>
+</head>
+
+<body>
+    <h1>Proxies</h1>
+    <script>
+
+        const persona = {
+            nombre: "",
+            apellido: "",
+            edad: 0
+        }
+
+        const manejador = {
+            set(obj, prop, valor) {
+                if (Object.keys(obj).indexOf(prop) === -1) {
+                    return console.error(`La propiedad "${prop}" no existe en el objeto persona`);
+                }
+
+                if ((prop === "nombre" || prop === "apellido") && !(/^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$/g.test(valor))) {
+                    return console.error(`La propiedad "${prop}" solo acepta letras y espacios en blanco`);
+                }
+
+                obj[prop] = valor;
+            }
+        }
+
+        const facu = new Proxy(persona, manejador);
+        facu.nombre = "facu";
+        facu.apellido = "p";
+        facu.edad = 12;
+        facu.twitter = "@facup";
+
+        console.log(facu);
+        console.log(persona);
+
+    </script>
+</body>
+
+</html>

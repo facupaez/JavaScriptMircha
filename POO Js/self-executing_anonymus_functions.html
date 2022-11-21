@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Anonimas Autoejecutables</title>
+</head>
+
+<body>
+    <h1>Funciones Anonimas Autoejecutables</h1>
+    <script>
+
+        //funcion comun
+        //alert("Hola");
+
+        //funcion anonima
+        (function () {
+            console.log("Mi primer IIFE");
+        })();
+
+        //funcion anonima
+        (function (d, w, c) {
+            console.log("Mi segunda IIFE");
+            console.log(d);
+            console.log(w);
+            c.log("Este es un console.log");
+        })(document, window, console);
+
+        // formas de escribir funciones anonimas autoejecutables
+        //clasica
+        (function () {
+            console.log("Version clasica");
+        })();
+
+        //crockford (js good parts)
+        ((function () {
+            console.log("Version Crockford");
+        })());
+
+        //unaria
+        +function () {
+            console.log("Version unaria");
+        }();
+
+        //facebook
+        !function () {
+            console.log("Version facebook");
+        }();
+
+    </script>
+</body>
+
+</html>

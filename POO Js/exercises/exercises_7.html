@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Repaso 7</title>
+</head>
+
+<body>
+    <h1>Ejercicios Repaso 7</h1>
+    <h2>21) Funcion que dado un array numerico devuelva otro array con los numeros elevados al cuadrado</h2>
+    <script>
+        /*
+        21) Funcion que dado un array numerico devuelva otro array con los numeros elevados al cuadrado 
+        pe. miFuncion([1, 2, 3]) devuelva [1, 4, 9]
+        */
+
+        const devolverCuadrados = (arr = undefined) => {
+            if (arr === undefined) return console.warn("No ingresaste un arreglo de números");
+
+            if (!(arr instanceof Array)) return console.error("El valor que ingresaste no es un array");
+
+            if (arr.length === 0) return console.error("El arreglo esta vacío");
+
+            for (let num of arr) {
+                if (typeof num !== "number") return console.error(`El valor "${num}" ingresado no es un número`);
+            }
+
+            const newArr = arr.map(el => el * el);
+
+            return console.info(`Arreglo original: ${arr},\n Arreglo elevado al cuadrado: ${newArr}`);
+        }
+
+        devolverCuadrados();
+        devolverCuadrados(true);
+        devolverCuadrados({});
+        devolverCuadrados([]);
+        devolverCuadrados([1, "2", 3]);
+        devolverCuadrados([1, 2, 3, 4, 5, 6]);
+
+    </script>
+    <h2>22) Funcion que dado un array devuelva el numero mayor y el menor</h2>
+    <script>
+        /*
+        22) Funcion que dado un array devuelva el numero mayor y el menor
+        pe. miFuncion([1, 2, 3, 4, 5]) devuelva [1, 5]
+        */
+
+        const arrayMinMax = (arr = undefined) => {
+            if (arr == undefined) return console.warn("No ingresaste un arreglo de números");
+
+            if (!(arr instanceof Array)) return console.error("El valor que ingresaste no es un array");
+
+            if (arr.length === 0) return console.error("El arreglo esta vacío");
+
+            for (let num of arr) {
+                if (typeof num !== "number") return console.error(`El valor "${num}" ingresado no es un número`);
+            }
+
+            return console.info(`Arreglo original: ${arr},\nValor mayor: ${Math.max(...arr)},\nValor menor: ${Math.min(...arr)}`);
+        }
+
+        arrayMinMax();
+        arrayMinMax(false);
+        arrayMinMax([]);
+        arrayMinMax(["a", "b", "c"]);
+        arrayMinMax([1, 4, 5, 99, -60]);
+
+    </script>
+    <h2>23) Funcion que dado un array de numeros devuelva un objeto con dos arreglos en el primero
+        se almacenan los numeros pares y en el segundo los numeros impares</h2>
+    <script>
+        /*
+        23) Funcion que dado un array de numeros devuelva un objeto con dos arreglos en el primero
+        se almacenan los numeros pares y en el segundo los numeros impares 
+        pe. miFuncion([1, 2, 3, 4, 5, 6]) devolverá impares: [1, 3, 5] pares: [2, 4, 6]
+        */
+
+        const separarPAresImpares = (arr = undefined) => {
+            if (arr == undefined) return console.warn("No ingresaste un arreglo de números");
+
+            if (!(arr instanceof Array)) return console.error("El valor que ingresaste no es un array");
+
+            if (arr.length === 0) return console.error("El arreglo esta vacío");
+
+            for (let num of arr) {
+                if (typeof num !== "number") return console.error(`El valor "${num}" ingresado no es un número`);
+            }
+
+            return console.info({
+                pares: arr.filter(num => num % 2 === 0),
+                impares: arr.filter(num => num % 2 === 1)
+            });
+        }
+
+        separarPAresImpares();
+        separarPAresImpares(false);
+        separarPAresImpares([]);
+        separarPAresImpares(["a", "b", "c"]);
+        separarPAresImpares([1, 2, 3, 4, 5, 6, 7, 8]);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Data Types in Javascript</title>
+</head>
+
+<body>
+    <h1>New Data Types in Javascript</h1>
+    <script>
+
+        let id = Symbol("id");
+        let id2 = Symbol("id");
+
+        console.log(id === id2);
+        console.log(id, id2);
+        console.log(typeof id, typeof id2);
+
+        const NAME = Symbol("name");
+        const GREET = Symbol("greet");
+
+        const person = {
+            [NAME]: "facu",
+            edad: 35
+        };
+        console.log(person);
+
+        person.NAME = "Facu Paez";
+        console.log(person);
+
+        console.log(person.NAME);
+        console.log(person[NAME]);
+
+        person[GREET] = function () {
+            console.log(`Hola`);
+        }
+        console.log(person);
+        person[GREET]();
+
+        //recorre propiedades dentro del obj person
+        for (let property in person) {
+            console.log(property);
+            console.log(person[property]);
+        }
+
+        console.log(Object.getOwnPropertySymbols(person));
+    </script>
+</body>
+
+</html>

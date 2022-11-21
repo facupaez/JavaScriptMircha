@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type of data</title>
+</head>
+
+<body>
+    <h1>PRIMITIVOS</h1>
+    <h2>Strings</h2>
+    <script>
+        //Template Strings(comillas invertidas)
+        //probamos distintos metodos para los tipos de datos strings
+
+        let nombre = "juan";
+        let apellido = "perez";
+        //Concatenacion
+        let saludo = "Hola mi nombre es " + nombre + " " + apellido + ".";
+        //console.log(saludo);
+
+        //Interpolacion
+        let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`
+        //console.log(saludo2);
+
+        let ul = `<ul>
+              <li>Primavera</li>
+              <li>Verano</li>
+              <li>Invierno</li>
+              <li>Otoño</li>
+              </ul>`
+        //console.log(ul);
+    </script>
+
+    <h2>Numéricos</h2>
+    <script>
+        let a = 2;
+        let b = new Number(2);
+        let c = 7.19;
+        let d = "2.3";
+
+        //probamos distintos metodos para los tipos de datos numbers
+        /*console.log(a, b);
+        console.log(c.toFixed(1));
+        console.log(c.toFixed(5));
+        console.log(parseInt(c));
+        console.log(typeof c, typeof d);
+        console.log(c + d);
+        console.log(parseInt(d));
+        console.log(c + parseInt(d));
+        console.log(c + parseFloat(d));
+        console.log(c + Number.parseInt(d));
+        console.log(c + Number.parseFloat(d));*/
+
+    </script>
+
+    <h2>Booleanos</h2>
+    <script>
+        let verdadero = true;
+        let falso = false;
+        let v = Boolean(true);
+        let f = Boolean(false);
+
+        //probamos distintos metodos para los tipos de datos booleanos
+        /*console.log(verdadero, falso);
+        console.log(typeof verdadero, typeof falso);*/
+
+        //valores con tendencia a verdadero o falso
+        /*console.log(Boolean(0));
+        console.log(Boolean(-7));
+        console.log(Boolean(""));
+        console.log(Boolean("abc"));*/
+    </script>
+
+    <h2>undefined, null & NaN</h2>
+    <script>
+        //variable creada pero sin definir que indica que el valor esta ausente
+        let indefinida;
+        console.log(indefinida);
+
+        //variable creada con valor null intencionalmente que indica ausencia de un valor
+        let nulo = null;
+        console.log(nulo);
+
+        //variable "not a number" 
+        let noEsUnNumero = "hola" * 3.7;
+        console.log(noEsUnNumero);
+    </script>
+
+</body>
+
+</html>

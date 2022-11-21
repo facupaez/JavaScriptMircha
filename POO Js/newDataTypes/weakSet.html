@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weak Sets</title>
+</head>
+
+<body>
+    <h1>Weak Sets</h1>
+    <script>
+
+        //estos elementos "debiles" no pueden iterarse (for), limpiarse (clear), ni verificar su tamaño (size)
+
+        const ws = new WeakSet();
+        let valor1 = { "varlo1": 1 };
+        let valor2 = { "varlo2": 2 };
+        let valor3 = { "varlo3": 3 };
+        ws.add(valor1);
+        ws.add(valor2);
+        ws.add(valor3);
+
+        console.log(ws);
+
+        console.log(ws.has(valor1));
+
+        ws.delete(valor2);
+        console.log(ws.has(valor2));
+
+        ws.add(valor2);
+        console.log(ws.has(valor2));
+
+        //setInterval(() => console.log(ws, 1000));
+
+        setTimeout(() => {
+            valor1 = null;
+            valor2 = null;
+            valor3 = null;
+        }, 5000);
+    </script>
+</body>
+
+</html>

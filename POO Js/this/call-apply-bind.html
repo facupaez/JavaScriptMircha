@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de Call, Apply, Bind</title>
+</head>
+
+<body>
+    <h1>Uso de Call, Apply, Bind</h1>
+    <script>
+
+        console.log(this);
+        this.lugar = "Contexto global";
+
+        function saludar(saludo, aQuien) {
+            console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+        }
+
+        saludar("Hola", "Kenai");
+
+        const obj = {
+            lugar: "Contexto obj"
+        }
+
+        saludar.call(obj, "Hola", "Jon");
+        saludar.call(null, "Hola", "Jon");
+        saludar.call(this, "Hola", "Jon");
+        saludar.apply(obj, ["Adios", "mircha"]);
+        saludar.apply(null, ["Adios", "mircha"]);
+        saludar.apply(this, ["Adios", "mircha"]);
+
+
+        const persona = {
+            nombre: "jon",
+            saludar: function () {
+                console.log(`Hola ${this.nombre}`);
+            }
+        }
+
+        persona.saludar();
+
+        const otraPersona = {
+            saludar: persona.saludar.bind(persona)
+        }
+
+        otraPersona.saludar();
+    </script>
+</body>
+
+</html>

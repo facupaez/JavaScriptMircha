@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+
+<body>
+    <h1>ARRAYS</h1>
+
+    <h2>Uso basico de arrays</h2>
+    <script>
+        const a = [];
+        const b = [1, true, "array", ["a", "b", "c"]];
+        console.log(a);
+        console.log(b);
+        //contar elementos de un array
+        console.log(b.length);
+        //acceder a la referencia de un array
+        console.log(b[2]);
+        //acceder a la referencia del array de otro array
+        console.log(b[3][2]);
+
+        const c = Array.of("x", "y", "z", 1, 2, 3);
+        console.log(c);
+
+    </script>
+
+    <h2>Propiedades de arrays</h2>
+    <script>
+        //crear array con un numero pre definido de elementos
+        const d = Array(100).fill(false);
+        console.log(d);
+
+        //manera antigua en desuso
+        const e = new Array();
+        console.log(e);
+    </script>
+
+    <h2>Funciones de arrays</h2>
+    <script>
+        const colores = ["rojo", "verde", "azul"];
+        console.log(colores);
+
+        //agregar elemento a array creado
+        colores.push("negro");
+        console.log(colores);
+
+        //quita el ultimo elemento
+        colores.pop();
+        console.log(colores);
+
+        colores.forEach(function (el, index) {
+            console.log(`<li id="${index}">${el}</li>`);
+        });
+    </script>
+</body>
+
+</html>

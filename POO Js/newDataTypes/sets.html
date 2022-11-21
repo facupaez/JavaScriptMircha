@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sets</title>
+</head>
+
+<body>
+    <h1>Set List</h1>
+    <script>
+
+        const set = new Set([1, 2, 3, 4, 5, 5]);
+        console.log(set);
+        console.log(set.size);
+
+        const set2 = new Set();
+        set2.add(1);
+        set2.add(2);
+        set2.add(3);
+        set2.add(4);
+        set2.add(5);
+        set2.add(5);
+
+        console.log(set2);
+        console.log(set2.size);
+
+        console.log("Recorriendo set con for of");
+        for (item of set) {
+            console.log(item);
+        }
+
+        console.log("Recorriendo set2 con for each");
+        set2.forEach(item => console.log(item));
+
+        console.log("Accediendo a la posición del arreglo set");
+        console.log(set[0]);
+
+        //convertir set en array
+        let arr = Array.from(set);
+        console.log(arr);
+        console.log(arr[3]);
+
+        //eliminar valores en set
+        set.delete(1);
+        console.log(set);
+
+        //comprobar si existe un valor
+        console.log(set.has(2));
+
+        //limpiar un set
+        set2.clear();
+        console.log(set2);
+
+    </script>
+</body>
+
+</html>

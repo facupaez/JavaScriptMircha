@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERADORES BASICOS</title>
+</head>
+
+<body>
+    <h1>OPERADORES BASICOS</h1>
+
+    <h2>Aritmeticos: (+, -, /, %, *)</h2>
+    <script>
+        let a = 5 + (5 - 10) * 3;
+        let mod = 5 % 2;
+
+        console.log(a);
+        console.log(mod);
+    </script>
+
+    <h2>Relacionales: (<,>, >=, <= ,==,===, !=, !==)</h2>
+                <script>
+                    console.log(8 > 9);
+                    console.log(8 < 9);
+                    console.log(8 >= 9);
+                    console.log(8 <= 9);
+
+                    /*
+                    = es asignacion de variable
+                    == es comparacion de valores (se considera mal practica)
+                    === es comparacion de tipo de dato y de valor (se usa)
+                    */
+
+                    console.log(7 == 7);
+                    console.log("7" == 7);
+                    console.log("7" === 7);
+                </script>
+
+                <h2>Incremento/decremento</h2>
+                <script>
+                    let i = 1;
+
+                    i = i + 2;
+                    console.log(i);
+
+                    i += 3;
+                    console.log(i);
+
+                    i /= 3;
+                    console.log(i);
+
+                    //operador unario
+                    let j = 1;
+                    j++;
+                    console.log(j);
+                    j--;
+                    console.log(j);
+                </script>
+
+                <h2>Logicos: ! not, || or, && and</h2>
+                <script>
+                    //convierte un true en false y viceversa
+                    console.log(!true)
+                    //si una se cumple devuelve true de lo contrario devuelve false
+                    console.log((9 === 9) || ("9" === 0));
+                    //si todas se cumplen devuelve true de lo contrario devuelve false
+                    console.log((9 === 9) && ("9" === 0));
+                </script>
+</body>
+
+</html>

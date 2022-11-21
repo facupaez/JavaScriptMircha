@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weak Maps</title>
+</head>
+
+<body>
+    <h1>Weak Maps</h1>
+    <script>
+
+        //estos elementos "debiles" no pueden iterarse (for), limpiarse (clear), ni verificar su tamaño (size)
+
+        const wm = new WeakMap();
+        let llave1 = {};
+        let llave2 = {};
+        let llave3 = {};
+
+        wm.set(llave1, 1);
+        wm.set(llave2, 2);
+        console.log(wm);
+
+        console.log(wm.has(llave1));
+        console.log(wm.has(llave3));
+
+        wm.delete(llave2);
+        console.log(wm.has(llave2));
+
+        wm.set(llave1, 1);
+        wm.set(llave2, 2);
+        wm.set(llave3, 3);
+        console.log(wm);
+
+        //setInterval(() => console.log(wm, 1000));
+
+        setTimeout(() => {
+            llave1 = null;
+            llave2 = null;
+            llave3 = null;
+        }, 5000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Repaso 6</title>
+</head>
+
+<body>
+    <h1>Ejercicios Repaso 6</h1>
+    <h2>18) Funcion que devuelva cantidad de consonantes y vocales de una cadena de texto</h2>
+    <script>
+        /*
+        18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, 
+        pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+        */
+
+        const contarConsonantesYVocales = (string = undefined) => {
+
+            if (string === undefined || string === "") return console.warn("Debe ingresar una cadena de texto");
+
+            if (typeof string !== "string") return console.warn(`El valor ${string} ingresado NO es una cadena de texto`);
+
+            let totalVowels = 0, totalConsonants = 0;
+
+            for (let i = 0; i < string.length; i++) {
+                let c = string[i];
+                // Converting character to lower case
+                c = c.toLowerCase();
+                // Alphabets family
+                if ((c >= "a" && c <= "z") || (c <= "ñ")) {
+                    // Vowels
+                    if (/[aeiou]/.test(c)) {
+                        totalVowels++;
+                    }
+                    // Consonants
+                    else {
+                        totalConsonants++;
+                    }
+                }
+            }
+
+            return console.log(`Palabras: ${string}` + '\n' +
+                "Total de vocales encontradas: " + totalVowels + '\n' +
+                "Total de consonantes encontradas: " + totalConsonants);
+        }
+
+        contarConsonantesYVocales();
+        contarConsonantesYVocales("");
+        contarConsonantesYVocales(123);
+        contarConsonantesYVocales("Hola mundo");
+        contarConsonantesYVocales("aAaAbBbBññÑÑ");
+
+    </script>
+    <h2>19) Funcion que valide que un texto sea un nombre válido</h2>
+    <script>
+        /*
+        19) Programa una función que valide que un texto sea un nombre válido, 
+        pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+        */
+
+        const validarNombre = (nombre = undefined) => {
+
+            if (nombre === undefined || nombre === "") return console.warn("Debe ingresar una cadena de texto");
+
+            if (typeof nombre !== "string") return console.warn(`El valor ${nombre} ingresado NO es una cadena de texto`);
+
+            //exp regular para validar solo letras y espacios
+            if (/^[A-Za-z\s]+$/g.test(nombre)) {
+                console.log("La nombre ingresado " + nombre + " es válido!");
+            } else {
+                console.log("La nombre ingresado " + nombre + " es inválido!");
+            }
+        }
+
+        console.log(validarNombre(""));
+        console.log(validarNombre(123));
+        console.log(validarNombre("Facu Paez"));
+        console.log(validarNombre("Facu Paez131"));
+        console.log(validarNombre("FacuPaez")); 
+    </script>
+    <h2>20) Funcion que valide que un texto sea un email válido</h2>
+    <script>
+        /*
+        20) Programa una función que valide que un texto sea un email válido, 
+        pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+        */
+
+
+        const validarEmail = (email = "") => {
+
+            if (email === undefined || email === "") return console.warn("Debe ingresar una cadena de texto");
+
+            if (typeof email !== "string") return console.warn(`El  valor ${email} ingresado NO es una cadena de texto`);
+
+            if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email)) {
+                console.log("La dirección de email ingresada " + email + " es válida!");
+            } else {
+                console.log("La dirección de email ingresada " + email + " es inválida!");
+            }
+        }
+
+        console.log(validarEmail(""));
+        console.log(validarEmail(123));
+        console.log(validarEmail("facu@gmail.com"));
+        console.log(validarEmail("fasda@gmail")); 
+    </script>
+</body>
+
+</html>

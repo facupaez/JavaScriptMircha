@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Repaso Peliculas</title>
+</head>
+
+<body>
+    <h1>Ejercicios Repaso Peliculas</h1>
+    <h2>Ejercicio Peliculas</h2>
+    <script>
+
+        class Pelicula {
+            constructor({ id, titulo, director, estreno, pais, generos, calificacion }) {
+                this.id = id;
+                this.titulo = titulo;
+                this.director = director;
+                this.estreno = estreno;
+                this.pais = pais;
+                this.generos = generos;
+                this.calificacion = calificacion;
+
+                this.validarIMDB(id);
+                this.validarTitulo(titulo);
+                this.validarDirector(director);
+                this.validarEstreno(estreno);
+                this.validarPais(pais);
+                this.validarGeneros(generos);
+                this.validarCalificacion(calificacion);
+            }
+
+            //validar cadenas de texto
+            validarCadena(propiedad, valor) {
+                if (!valor) return console.warn(`${propiedad} "${valor}" esta vacío`);
+
+                if (typeof valor !== "string") return console.error(`${propiedad} "${valor}" ingresado no es una cadena de texto`);
+
+                return true;
+            }
+
+            //valida longitud de cadenas de texto
+            validarLongitudCadena(propiedad, valor, longitud) {
+                if (valor.length > longitud) return console.error(`${propiedad} "${valor}" excede el número de carácteres permitidos (${longitud})`);
+                return true;
+            }
+
+            //valida que ingrese un valor y que este sea un numero
+            validarNumero(propiedad, valor) {
+                if (!valor) return console.warn(`${propiedad} "${valor}" esta vacío`);
+
+                if (typeof valor !== "number") return console.error(`${propiedad} "${valor}" ingresado no es un número`);
+
+                return true;
+            }
+
+            //validar que el id IMDB tenga 9 caracteres, los 2 primeros letras y los 7 siguientes numeros
+            validarIMDB(id) {
+                if (this.validarCadena("IMDB id", id)) {
+                    if (!(/^([a-z]){2}([0-9]){7}$/.test(id))) {
+                        return console.error(`IMDB id "${id}" no es válido, debe tener 9 caracteres, los 2 primeros letras y los 7 siguientes numeros`);
+                    }
+                }
+            }
+
+            validarTitulo(titulo) {
+                if (this.validarCadena("Titulo", titulo)) {
+                    this.validarLongitudCadena("Titulo", titulo, 100);
+                }
+            }
+
+            validarDirector(director) {
+                if (this.validarCadena("Director", director)) {
+                    this.validarLongitudCadena("Director", director, 50);
+                }
+            }
+
+            validarEstreno(estreno) {
+                if (this.validarNumero("Año de estreno", estreno)) {
+                    if (!(/^([0-9]){4}$/.test(estreno))) {
+                        return console.error(`Año de estreno "${estreno}" no es válido, debe ser un número de 4 digitos`);
+                    }
+                }
+            }
+
+            //metodo para validar arreglo
+            validarArreglo(propiedad, valor) {
+                if (!valor) return console.warn(`${propiedad} "${valor}" esta vacío`);
+
+                if (!(valor instanceof Array)) return console.error(`${propiedad} "${valor}" no es un array"`);
+
+                if (valor.length === 0) return console.error(`${propiedad} "${valor}" no tiene datos`);
+
+                for (let cadena of valor) {
+                    if (typeof cadena !== "string") return console.error(`El valor "${cadena}" ingresado no es una cadena de texto`);
+                }
+                return true;
+            }
+
+            //metodo para validar pais
+            validarPais(pais) {
+                this.validarArreglo("Pais", pais);
+            }
+
+            //lista de generos
+            static get listaGeneros() {
+                return ["Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime",
+                    "Documentary", "Drama", "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror",
+                    "Musical", "Music", "Mistery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport",
+                    "Talk-Show", "Thriller", "War", "Western"]
+            }
+
+            //metodo para delvover generos aceptados
+            static generosAceptados() {
+                return console.info(`Los generos aceptados son: ${Pelicula.listaGeneros.join(", ")}`)
+            }
+
+            //metodo para validar generos
+            validarGeneros(generos) {
+                if (this.validarArreglo("Generos", generos)) {
+                    for (let genero of generos) {
+                        if (!Pelicula.listaGeneros.includes(genero)) {
+                            console.error(`Género(s) incorrectos "${generos.join(", ")}"`);
+                            Pelicula.generosAceptados();
+                        }
+                    }
+                }
+            }
+
+            //validar calificacion entre 0 y 10
+            validarCalificacion(calificacion) {
+                if (this.validarNumero("Calificación", calificacion))
+                    return (calificacion < 0 || calificacion > 10)
+                        ? console.error(`La calificación tiene que estar en un rango entre 0 y 10`)
+                        : this.calificacion = calificacion.toFixed(1);
+            }
+
+            fichaTecnica() {
+                console.info(`Ficha técnica:\nTítulo:"${this.titulo}"\nDirector:"${this.director}"\nAño:"${this.estreno}"\nPaís:"${this.pais.join("-")}"\nGéneros:"${this.generos.join(", ")}"\nCalificación:"${this.calificacion}\n"IMDB id:"${this.id}"`)
+            }
+        }
+
+        //Pelicula.generosAceptados();
+
+        /*const peli = new Pelicula({
+            id: "tt1234567",
+            titulo: "Test Peli",
+            director: "Test Director",
+            estreno: 2022,
+            pais: ["Francia"],
+            generos: ["Comedy", "Sport"],
+            calificacion: 7.1231
+        });*/
+
+        //peli.fichaTecnica();
+
+        const misPelis = [
+            {
+                id: "tt1234567",
+                titulo: "Test Peli",
+                director: "Test Director",
+                estreno: 2022,
+                pais: ["Francia"],
+                generos: ["Comedy", "Sport"],
+                calificacion: 7.1231
+            },
+            {
+                id: "tt1234567",
+                titulo: "Test Peli 1",
+                director: "Test Director 1",
+                estreno: 2022,
+                pais: ["Francia"],
+                generos: ["Comedy", "Sport"],
+                calificacion: 7.99
+            },
+            {
+                id: "tt1234567",
+                titulo: "Test Peli 2",
+                director: "Test Director 2",
+                estreno: 2022,
+                pais: ["Francia"],
+                generos: ["Comedy", "Sport"],
+                calificacion: 1.8
+            }
+        ];
+
+        misPelis.forEach(el => new Pelicula(el).fichaTecnica());
+
+    </script>
+</body>
+
+</html>

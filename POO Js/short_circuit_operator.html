@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operdaror de Cortocircuito</title>
+</head>
+
+<body>
+    <h1>Operdaror de Cortocircuito</h1>
+    <script>
+        /*
+        Cortocircuito OR - cuando el valor de la izquierda en la
+        expresion siempre pueda validar a true, es el valor que
+        se cargara por defecto
+        */
+
+        function saludar(nombre) {
+            nombre = nombre || "Desconocido";
+            console.log(`Hola ${nombre}`);
+        }
+        console.log("Cadena" || "Valor de la derecha");
+        console.log(false || "Valor de la derecha");
+        console.log(null || "Valor de la derecha");
+        console.log(undefined || "Valor de la derecha");
+
+        saludar("Jhon");
+        saludar();
+
+        /*
+              Cortocircuito AND - cuando el valor de la izquierda en la
+              expresion siempre pueda validar a false, es el valor que
+              se cargara por defecto
+          */
+        console.log("Cadena" && "Valor de la derecha");
+        console.log(false && "Valor de la derecha");
+        console.log(null && "Valor de la derecha");
+        console.log(undefined && "Valor de la derecha");
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia</title>
+</head>
+
+<body>
+
+</body>
+<h1>Herencia</h1>
+<script>
+    //clase padre de "perro", e hija de "object"
+    class Animal {
+
+        // el constructor es un metodo que se ejecuta al instanciar la clase
+        constructor(nombre, genero) {
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+
+        sonar() {
+            console.log("Hago sonidos porque estoy vivo");
+        }
+
+        saludar() {
+            console.log(`Mi nombre es ${this.nombre}`);
+        }
+    }
+
+    //clase hija de "animal"
+    class Perro extends Animal {
+        constructor(nombre, genero, tamanio) {
+            //con super se manda a llamar el constructor de la clase padre, en este caso "Animal"
+            super(nombre, genero);
+            //le agregamos los parametros que añadio el constructor
+            this.tamanio = tamanio;
+        }
+
+        //cambiamos metodo de la clase padre
+        sonar() {
+            console.log("Soy un perro y mi sonido es un ladrido");
+        }
+
+        //agregamos metodo a esta clase hija
+        ladrar() {
+            console.log("Ahora estoy ladrando")
+        }
+    }
+
+    const mimi = new Animal("Mimi", "Hembra"),
+        scooby = new Perro("Scooby", "Macho", "Gigante");
+
+    console.log(mimi);
+    mimi.saludar();
+    mimi.sonar();
+    console.log(scooby);
+    scooby.saludar();
+    scooby.sonar();
+    scooby.ladrar();
+</script>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Repaso 2</title>
+</head>
+
+<body>
+    <h1>Ejercicios Repaso 2</h1>
+    <h2>5) Invertir palabras de cadena de texto</h2>
+    <script>
+        /*
+        5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+        */
+        const invertirTexto = (texto = "") => {
+
+            if (!texto) return console.warn("Debe ingresar un texto")
+
+            if (texto.length <= 1) return console.warn("Debe ingresar más de un caracter");
+
+            if (/^\s+$/.test(texto)) return console.warn("No puede ingresar solo espacios en blanco");
+
+            console.info(texto.split('').reverse().join(''));
+
+        }
+
+        invertirTexto("         ");
+        invertirTexto("");
+        invertirTexto("A");
+        invertirTexto("Hola que tal");
+
+    </script>
+    <h2>6) Contar el número de veces que se repite una palabra en un texto</h2>
+    <script>
+        /*
+        6) Programa una función para contar el número de veces que se repite una palabra en un texto largo,
+         pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+        */
+        const contarPalabra = (texto = "", separador = /[\s\.,]+/g) => {
+
+            if (!texto) return console.warn("Debe ingresar un texto")
+
+            if (texto.length <= 1) return console.warn("Debe ingresar más de un caracter");
+
+            if (/^\s+$/.test(texto)) return console.warn("No puede ingresar solo espacios en blanco");
+
+            let arrayDePalabras = texto.split(separador);
+            const resultado = arrayDePalabras.reduce((prev, cur) => ((prev[cur] = prev[cur] + 1 || 1), prev), {});
+
+            console.log("Contar palabras repetidas en: Hola mundo, hoy es martes, mañana es nochebuena, pasado mañana es navidad. Hola mundo");
+            console.log(resultado);
+        }
+
+        contarPalabra("         ");
+        contarPalabra("");
+        contarPalabra("A");
+        contarPalabra("Hola mundo, hoy es martes, mañana es nochebuena, pasado mañana es navidad. Hola mundo");
+
+        //forma de jon
+        const textoEnCadena = (cadena = "", texto = "") => {
+            let i = 0,
+                contador = 0;
+
+            while (i !== -1) {
+                i = cadena.indexOf(texto, i);
+                if (i !== -1) {
+                    i++;
+                    contador++;
+                }
+            }
+            return console.info(`La palabra '${texto}' se repite ${contador} veces`);
+        }
+
+        textoEnCadena("Hola mundo adios mundo", "mundo");
+
+
+
+    </script>
+    <h2>7) Validar si una palabra o frase es un palíndromo (que se lee igual en un sentido que en otro)</h2>
+    <script>
+        /*
+        7) Programa una función que valide si una palabra o frase dada, es un palíndromo 
+        (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+        */
+
+        const validarPalidromo = (palabra = "") => {
+
+            if (!palabra) return console.warn("Debe ingresar un texto")
+
+            if (palabra.length <= 1) return console.warn("Debe ingresar más de un caracter");
+
+            if (/^\s+$/.test(palabra)) return console.warn("No puede ingresar solo espacios en blanco");
+
+            let palabraReversed = palabra.split('').reverse().join('');
+
+            return (palabraReversed.toLowerCase()) === (palabra.toLowerCase())
+                ? console.info(`${palabra} "Es palidromo"`)
+                : console.info(`${palabra} "No es palidromo"`);
+
+        }
+
+        validarPalidromo("         ");
+        validarPalidromo("");
+        validarPalidromo("A");
+        validarPalidromo("Oso");
+        validarPalidromo("Neuquen");
+        validarPalidromo("Hola");
+    </script>
+    <h2>8) Función que elimine cierto patrón de carácteres de un texto</h2>
+    <script>
+        /*
+        8) Programa una función que elimine cierto patrón de caracteres de un texto dado, 
+        pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+        */
+
+        const eliminarCaracter = (texto = "", patron = "") => {
+
+            if (!texto) return console.warn("Debe ingresar un texto")
+
+            if (!patron) return console.warn("Debe ingresar un patron")
+
+            if (texto.length <= 1) return console.warn("Debe ingresar más de un caracter");
+
+            if (/^\s+$/.test(texto)) return console.warn("No puede ingresar solo espacios en blanco");
+
+            console.info(texto.replace(new RegExp(patron, "ig"), ""));
+        }
+
+        eliminarCaracter("         ", "xyz");
+        eliminarCaracter("");
+        eliminarCaracter("A", "xyz");
+        eliminarCaracter("xyz1, xyz2, xyz3, xyz4 y xyz5", "");
+        eliminarCaracter("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
+
+    </script>
+
+</body>
+
+</html>

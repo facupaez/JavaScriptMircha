@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Repaso 4</title>
+</head>
+
+<body>
+    <h1>Ejercicios Repaso 4</h1>
+    <h2>12) Funcion que determine si un numero es primo</h2>
+    <script>
+        /*
+        12) Programa una función que determine si un número es primo(aquel que solo es divisible por sí
+         mismo y 1) o no, pe.miFuncion(7) devolverá true.
+         */
+
+        //primos: numeros que tienen 2 divisores, compuestos: numeros que tienen mas de dos divisores
+        const esNumeroPrimo = (numero = undefined) => {
+
+            if (!numero) return console.warn("Debe ingresar un numero");
+            if (typeof numero !== "number") return console.warn(`El valor ${numero} ingresado NO es un numero`);
+
+            if (numero === 0 || numero === 1 || numero === 4) return false;
+            for (let x = 2; x < numero / 2; x++) {
+                if (numero % x === 0) return false;
+            }
+            // Si no se pudo dividir por ninguno de los de arriba, sí es primo
+            return true;
+        }
+
+        console.log(esNumeroPrimo("a"));
+        console.log(esNumeroPrimo());
+        console.log(esNumeroPrimo(13));
+        console.log(esNumeroPrimo(86));
+
+        //ejemplo con foreach
+        const numerosParaProbar = [1, 2, 50, 51, 3, 500, 7, 1311, "", "a"];
+
+        numerosParaProbar.forEach(number => {
+
+            if (!number) return console.warn("Debe ingresar un numero");
+            if (typeof number !== "number") return console.warn(`El valor ${number} ingresado NO es un numero`);
+
+            console.log(`${number} es primo?`, esNumeroPrimo(number));
+        });
+
+    </script>
+    <h2>13) Funcion que determine si un numero es par o impar</h2>
+    <script>
+        /*
+        13) Programa una función que determine si un número es par o impar, 
+        pe.miFuncion(29) devolverá Impar. 
+        */
+        const esParoImpar = (numero = undefined) => {
+            //un numero es par si es divisible por 2, de lo contrario es impar
+            if (!numero) return console.warn("Debe ingresar un numero");
+            if (typeof numero !== "number") return console.warn(`El valor ${numero} ingresado NO es un numero`);
+
+            return (numero % 2) === 0
+                ? console.info("Es par")
+                : console.info("Es impar");
+        }
+
+        esParoImpar("a");
+        esParoImpar();
+        esParoImpar(1);
+        esParoImpar(10);
+        esParoImpar(33);
+        esParoImpar(54);
+
+    </script>
+    <h2>14) Funcion que convierta grados celsius a fahrenheit y viceversa</h2>
+    <script>
+        /*
+        14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, 
+        pe.miFuncion(0, "C") devolverá 32°F. 
+        */
+        const convertirCelsiusAFahrenheit = (temperatura) => { return (temperatura * 1.8) + 32 + " Grados °F" };
+
+        const ingresaGradosCelsius = (grados) => {
+
+            if (!grados) return console.warn("Debe ingresar un numero");
+            if (typeof grados !== "number") return console.warn(`El valor ${grados} ingresado NO es un numero`);
+
+            console.log(`${grados} Grados °C es igual a:`);
+            return convertirCelsiusAFahrenheit(grados);
+        }
+
+        console.log(ingresaGradosCelsius("a"));
+        console.log(ingresaGradosCelsius());
+        console.log(ingresaGradosCelsius(100));
+
+        const convertirFahrenheitsACelsius = (temperatura) => { return Math.round(((temperatura - 32) / 1.8)) + " Grados °C" };
+
+        const ingresaGradosFahrenheit = (grados) => {
+
+            if (!grados) return console.warn("Debe ingresar un numero");
+            if (typeof grados !== "number") return console.warn(`El valor ${grados} ingresado NO es un numero`);
+
+            console.log(`${grados} Grados °F es igual a:`);
+            return convertirFahrenheitsACelsius(grados);
+        }
+
+        console.log(ingresaGradosFahrenheit("a"));
+        console.log(ingresaGradosFahrenheit());
+        console.log(ingresaGradosFahrenheit(100));
+    </script>
+</body>
+
+</html>

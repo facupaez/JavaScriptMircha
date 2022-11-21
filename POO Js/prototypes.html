@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipos</title>
+</head>
+
+<body>
+    <h1>Prototipos</h1>
+    <h2>Clases: Modelo a seguir</h2>
+
+    <h2>Objeto: Instancia de una clase</h2>
+
+    <h2>Atributos: Característica o propiedad de un objeto (variables dentro de un objeto)</h2>
+
+    <h2>Métodos: Acciones que un objeto puede realizar (son funciones dentro de un objeto)</h2>
+
+
+    <script>
+        //forma de crear objetos sin heredar
+        const animal = {
+            nombre: "Pato Lucas",
+            sonar() {
+                console.log("Hago sonidos porque estoy vivo");
+            }
+        }
+
+        const animal2 = {
+            nombre: "Bugs Bunny",
+            sonar() {
+                console.log("Hago sonidos porque estoy vivo");
+            }
+        }
+
+        console.log(animal);
+        console.log(animal2);
+    </script>
+
+    <script>
+        //funcion constructora
+        function Animal(nombre, genero) {
+            //atributos
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+
+        //metodo fuera de la funcion constructora (buena practica)
+        //le asignamos los metodos a la funcion constructora
+        Animal.prototype.sonar = function () {
+            console.log("Hago sonidos porque estoy vivo");
+        }
+
+        Animal.prototype.saludar = function () {
+            console.log(`Mi nombre es ${this.nombre}`);
+        }
+
+        const patoLucas = new Animal("Pato Lucas", "Macho"),
+            bugsBunny = new Animal("Bugs Bunny", "Macho");
+
+        console.log(patoLucas);
+        console.log(bugsBunny);
+
+        patoLucas.saludar();
+        patoLucas.sonar();
+        bugsBunny.saludar();
+    </script>
+
+    <script>
+        //herencia prototipica
+        function Perro(nombre, genero, tamanio) {
+            this.super = Animal;
+            this.super(nombre, genero);
+            this.tamanio = tamanio;
+        }
+
+        //Perro esta heredando de Animal
+        Perro.prototype = new Animal();
+        Perro.prototype.constructor = Perro;
+
+        //sobreescritura de metodos del prototipo padre en el hijo
+        Perro.prototype.sonar = function () {
+            console.log("Soy un perro y mi sonido es un ladrido");
+        }
+
+        Perro.prototype.ladrar = function () {
+            console.log("Ahora estoy ladrando")
+        }
+
+        const patoLucas1 = new Perro("Pato Lucas", "Macho", "Mediano"),
+            bugsBunny1 = new Animal("Bugs Bunny", "Macho");
+
+        console.log(patoLucas1);
+        console.log(bugsBunny1);
+
+        patoLucas1.ladrar();
+        patoLucas1.sonar();
+        bugsBunny1.sonar();
+        patoLucas1.saludar();
+        bugsBunny1.saludar();
+    </script>
+</body>
+
+</html>

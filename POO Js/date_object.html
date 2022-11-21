@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Date</title>
+</head>
+
+<body>
+    <h1>Objeto Date</h1>
+    <script>
+        console.log(Date());
+
+        let fecha = new Date();
+        console.log(fecha);
+
+        //representa dia del mes en numero
+        console.log(fecha.getDate());
+
+        //representa el dia de la semana en numero
+        console.log(fecha.getDay());
+
+        //representa el mes en numero
+        console.log(fecha.getMonth());
+
+        //representa el año en numero
+        console.log(fecha.getFullYear());
+
+        //representacion horas, minutos y segundos
+        console.log(fecha.getHours());
+        console.log(fecha.getMinutes());
+        console.log(fecha.getSeconds());
+        console.log(fecha.getMilliseconds());
+
+        //extraer solo fecha
+        console.log(fecha.toDateString());
+        console.log(fecha.toLocaleString());
+        console.log(fecha.toLocaleDateString());
+        console.log(fecha.toLocaleTimeString());
+
+    </script>
+</body>
+
+</html>
