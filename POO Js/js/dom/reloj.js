@@ -19,6 +19,27 @@ export function digitalClock(clock, btnPlay, btnStop){
         }
     });
 }
-export function alarm(){
-    
+
+export function alarm(alarm, btnOn, btnOff){
+    let alarmTempo;
+    const $alarm = d.createElement("audio");
+    $alarm.src = alarm;
+
+    d.addEventListener("click", (e) =>{
+        if(e.target.matches(btnOn)){
+            alarmTempo = setTimeout(() => {
+                $alarm.play();
+            }, 2000);
+            d.querySelector(btnOn).disabled = true;
+        }
+    });
+
+    d.addEventListener("click", (e) =>{
+        if(e.target.matches(btnOff)){
+            clearTimeout(alarmTempo);
+            $alarm.pause();
+            $alarm.currentTime = 0;
+            d.querySelector(btnOn).disabled = false;
+        }
+    });
 }
