@@ -12,7 +12,6 @@ d.addEventListener("DOMContentLoaded", (e) => {
   alarm("../assets/alarma.mp3", "#activar-alarma", "#desactivar-alarma");
   countdown("countdown", "February 15, 2023", "Feliz Cumpleaños!");
   scrollTopButton(".scroll-top-btn");
-  darkTheme(".dark-theme-btn", "dark-mode");
 });
 
 /* teclado 3 posiciones: 
@@ -23,3 +22,5 @@ d.addEventListener("keydown", (e) => {
   shorcuts(e);
   moveBall(e, ".ball", ".stage");
 });
+
+darkTheme(".dark-theme-btn", "dark-mode");
