@@ -1,7 +1,7 @@
-import countdown from "./dom/cuenta_regresiva.js";
-import hamburgerMenu from "./dom/menu_hamburguesa.js";
-import { digitalClock, alarm } from "./dom/reloj.js";
-import { moveBall, shorcuts } from "./dom/teclado.js";
+import countdown from "./domExercises/cuenta_regresiva.js";
+import hamburgerMenu from "./domExercises/menu_hamburguesa.js";
+import { digitalClock, alarm } from "./domExercises/reloj.js";
+import { moveBall, shorcuts } from "./domExercises/teclado.js";
 const d = document;
 
 d.addEventListener("DOMContentLoaded", (e) => {
