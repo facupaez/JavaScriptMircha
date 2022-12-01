@@ -3,6 +3,7 @@ import countdown from "./domExercises/cuenta_regresiva.js";
 import hamburgerMenu from "./domExercises/menu_hamburguesa.js";
 import { digitalClock, alarm } from "./domExercises/reloj.js";
 import { moveBall, shorcuts } from "./domExercises/teclado.js";
+import darkTheme from "./domExercises/tema_oscuro.js";
 const d = document;
 
 d.addEventListener("DOMContentLoaded", (e) => {
@@ -11,6 +12,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   alarm("../assets/alarma.mp3", "#activar-alarma", "#desactivar-alarma");
   countdown("countdown", "February 15, 2023", "Feliz Cumpleaños!");
   scrollTopButton(".scroll-top-btn");
+  darkTheme(".dark-theme-btn", "dark-mode");
 });
 
 /* teclado 3 posiciones: 
