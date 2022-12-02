@@ -3,6 +3,7 @@ import countdown from "./domExercises/cuenta_regresiva.js";
 import hamburgerMenu from "./domExercises/menu_hamburguesa.js";
 import responsiveMedia from "./domExercises/objeto_responsive.js";
 import { digitalClock, alarm } from "./domExercises/reloj.js";
+import responsiveTester from "./domExercises/responsive.js";
 import { moveBall, shorcuts } from "./domExercises/teclado.js";
 import darkTheme from "./domExercises/tema_oscuro.js";
 const d = document;
@@ -25,6 +26,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     `<a href="https://goo.gl/maps/xW51VVwbNMdXBXJg8" target="_blank" rel="noonper">Ver mapa</a>`,
     `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1699.9456414649833!2d-63.53599680480868!3d-31.55459811156551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94332a4d9f0068cf%3A0x1cc7a9123d1d94ad!2sPlaza%20General%20Paz.!5e0!3m2!1ses!2sar!4v1669953892824!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
   );
+  responsiveTester("responsive-tester");
 });
 
 /* teclado 3 posiciones: 
