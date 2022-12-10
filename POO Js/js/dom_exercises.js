@@ -2,6 +2,7 @@ import scrollTopButton from "./domExercises/boton_scroll.js";
 import countdown from "./domExercises/cuenta_regresiva.js";
 import userDeviceInfo from "./domExercises/deteccion_dispositivos.js";
 import networkStatus from "./domExercises/deteccion_red.js";
+import webCam from "./domExercises/deteccion_webcam.js";
 import hamburgerMenu from "./domExercises/menu_hamburguesa.js";
 import responsiveMedia from "./domExercises/objeto_responsive.js";
 import { digitalClock, alarm } from "./domExercises/reloj.js";
@@ -30,6 +31,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   );
   responsiveTester("responsive-tester");
   userDeviceInfo("user-device");
+  webCam("webcam");
 });
 
 /* teclado 3 posiciones: 
