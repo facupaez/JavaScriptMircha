@@ -4,6 +4,7 @@ import userDeviceInfo from "./domExercises/deteccion_dispositivos.js";
 import getGeolocation from "./domExercises/deteccion_geolocalizacion.js";
 import networkStatus from "./domExercises/deteccion_red.js";
 import webCam from "./domExercises/deteccion_webcam.js";
+import searchFilter from "./domExercises/filtro_busquedas.js";
 import hamburgerMenu from "./domExercises/menu_hamburguesa.js";
 import responsiveMedia from "./domExercises/objeto_responsive.js";
 import { digitalClock, alarm } from "./domExercises/reloj.js";
@@ -34,6 +35,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   userDeviceInfo("user-device");
   webCam("webcam");
   getGeolocation("geolocation");
+  searchFilter(".card-filter", ".card");
 });
 
 /* teclado 3 posiciones: 
