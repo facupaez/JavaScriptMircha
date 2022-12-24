@@ -37,6 +37,7 @@ img{
 
 .header{
     position: sticky;
+    z-index: 997;
     top: 0;
     padding: 1rem;
     background-color: var(--main-color);
@@ -242,4 +243,63 @@ img{
 visibility: hidden;
 opacity: 0;
 order: 1;
+}
+
+/* RESPONSIVE SLIDER */
+
+.slider{
+    position: relative;
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.slider-slides{
+    position: relative;
+    height: 400px;
+}
+
+.slider-slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: opacity 1s ease;
+}
+
+.slider-slide img{
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+}
+
+.slider-slide.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.slider-btns{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.slider a{
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.slider a:hover{
+    color: #4d4d4d;
 }

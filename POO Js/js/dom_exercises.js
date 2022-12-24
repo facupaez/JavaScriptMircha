@@ -1,4 +1,5 @@
 import scrollTopButton from "./domExercises/boton_scroll.js";
+import slider from "./domExercises/carrusel.js";
 import countdown from "./domExercises/cuenta_regresiva.js";
 import userDeviceInfo from "./domExercises/deteccion_dispositivos.js";
 import getGeolocation from "./domExercises/deteccion_geolocalizacion.js";
@@ -38,6 +39,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   getGeolocation("geolocation");
   searchFilter(".card-filter", ".card");
   digitalDraw("#winner-btn", ".player");
+  slider();
 });
 
 /* teclado 3 posiciones: 
