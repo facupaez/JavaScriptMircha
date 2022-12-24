@@ -10,6 +10,7 @@ import hamburgerMenu from "./domExercises/menu_hamburguesa.js";
 import responsiveMedia from "./domExercises/objeto_responsive.js";
 import { digitalClock, alarm } from "./domExercises/reloj.js";
 import responsiveTester from "./domExercises/responsive.js";
+import scrollSpy from "./domExercises/scroll_spy.js";
 import digitalDraw from "./domExercises/sorteo_digital.js";
 import { moveBall, shorcuts } from "./domExercises/teclado.js";
 import darkTheme from "./domExercises/tema_oscuro.js";
@@ -40,6 +41,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   searchFilter(".card-filter", ".card");
   digitalDraw("#winner-btn", ".player");
   slider();
+  scrollSpy();
 });
 
 /* teclado 3 posiciones: 
