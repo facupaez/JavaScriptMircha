@@ -28,7 +28,7 @@ export default function getGeolocation(id) {
 
   const error = (err) => {
     $id.innerHTML = `<p>Error Code: ${err.code} <mark> ${err.message}</mark></p>`;
-    console.log(`Error Code: ${err.code} ${err.message}`);
+    //console.log(`Error Code: ${err.code} ${err.message}`);
   };
 
   n.geolocation.getCurrentPosition(success, error, options);

@@ -34,6 +34,7 @@
             <a href="#seccion11" data-scroll-spy>Sorteo Digital</a>
             <a href="#seccion12" data-scroll-spy>Responsive Slider</a>
             <a href="#seccion13" data-scroll-spy>Vídeo Inteligente</a>
+            <a href="#seccion14" data-scroll-spy>Validaciones de Formulario</a>
         </nav>
     </aside>
     <main>
@@ -163,7 +164,7 @@
         </section>
         <section id="seccion13" class="section" data-scroll-spy>
             <h2>Vídeo Inteligente</h2>
-            <video src="../assets/Lionel Messi.mp4" autoplay controls data-smart-video-messi></video>
+            <video src="../assets/Lionel Messi.mp4" muted controls data-smart-video-messi></video>
             <br>
             <br>
             <br>
@@ -184,7 +185,33 @@
             <br>
             <br>
             <br>
-            <video src="../assets/Lionel Messi.mp4" controls data-smart-video-messi2></video>
+            <video src="../assets/Lionel Messi.mp4" muted controls data-smart-video-messi2></video>
+        </section>
+        <section id="seccion14" class="section" data-scroll-spy>
+            <h2>Validaciones de Formulario</h2>
+            <form class="contact-form">
+                <legend>Envíanos tus comentarios</legend>
+                <input type="text" name="name" placeholder="Escribe tu nombre"
+                    title="El nombre sólo acepta letras y espacios en blaco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                    required>
+                <br>
+                <input type="email" name="email" placeholder="Escribe tu email" title="El email debe ser real"
+                    pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+                <br>
+                <input type="text" name="subject" placeholder="Asunto a tratar" title="El asunto es requerido" required>
+                <br>
+                <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios"
+                    data-pattern="^.{1,255}$" title="Tu comentario no debe exceder los 255 carácteres"
+                    required></textarea>
+                <br>
+                <input type="submit" name="Enviar">
+                <div class="contact-form-loader none">
+                    <img src="../assets/oval.svg" alt="Cargando">
+                </div>
+                <div class="contact-form-response none">
+                    <p>Los datos han sido enviados</p>
+                </div>
+            </form>
         </section>
     </main>
     <button class="scroll-top-btn hidden">&#11014;</button>

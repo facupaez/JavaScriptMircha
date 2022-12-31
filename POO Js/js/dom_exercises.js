@@ -14,6 +14,7 @@ import scrollSpy from "./domExercises/scroll_spy.js";
 import digitalDraw from "./domExercises/sorteo_digital.js";
 import { moveBall, shorcuts } from "./domExercises/teclado.js";
 import darkTheme from "./domExercises/tema_oscuro.js";
+import contactFormValidations from "./domExercises/validaciones_formulario.js";
 import smartVideo from "./domExercises/video_inteligente.js";
 const d = document;
 
@@ -44,6 +45,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   slider();
   scrollSpy();
   smartVideo();
+  contactFormValidations();
 });
 
 /* teclado 3 posiciones: 
