@@ -1,0 +1,61 @@
+{
+  "perros": [
+    {
+      "id": 1,
+      "nombre": "Capitán",
+      "color": "Negro"
+    },
+    {
+      "id": 2,
+      "nombre": "Osa",
+      "color": "Mostaza"
+    },
+    {
+      "id": 3,
+      "nombre": "Akón",
+      "color": "Negro"
+    },
+    {
+      "id": 4,
+      "nombre": "Lolo",
+      "color": "Beish"
+    },
+    {
+      "id": 5,
+      "nombre": "Asha",
+      "color": "Blanco"
+    },
+    {
+      "id": 6,
+      "nombre": "Diana",
+      "color": "Blanco"
+    }
+  ],
+  "gatos": [
+    {
+      "id": 1,
+      "nombre": "Felix",
+      "color": "Negro"
+    },
+    {
+      "id": 2,
+      "nombre": "Figaro",
+      "color": "Blanco"
+    },
+    {
+      "id": 3,
+      "nombre": "Gatsby",
+      "color": "Gris"
+    },
+    {
+      "id": 4,
+      "nombre": "Tom",
+      "color": "Azul"
+    },
+    {
+      "id": 5,
+      "nombre": "Gardfield",
+      "color": "Naranja"
+    }
+  ]
+}
