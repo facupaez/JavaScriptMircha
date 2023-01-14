@@ -147,14 +147,14 @@
 
       $axiosAsync.appendChild($fragment);
     } catch (err) {
-      console.log(err.response);
+      //console.log(err.response);
       let message =
         err.response.statusText || "Ocurrió un error en la petición";
       $axiosAsync.innerHTML = `Error ${err.response.status}: ${message}`;
     } finally {
-      console.log(
+      /* console.log(
         "Esto se ejecutará independientemente del resultado del try... catch"
-      );
+      ); */
     }
   }
 
